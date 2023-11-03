@@ -2,14 +2,15 @@
 #include <malloc.h>
 
 
-void swap(int *a, int *b){
+void swap(int *a, int *b){ //swaps two array elements
     int temp;
     temp = *a;
     *a = *b;
     *b = temp;
 }
 
-void quickSort(int* arr, int left, int right)
+
+void quickSort(int* arr, int left, int right) //quick Sort of array
 {
     if (left < right) {
         int mid = arr[(left + right) / 2];
@@ -24,12 +25,11 @@ void quickSort(int* arr, int left, int right)
             while (arr[j] > mid)
                 j--;
 
-            if (i <= j) {
-                swap(&arr[i], &arr[j]);
-                i++;
-                j--;
-            }
+            if (i <= j)
+                swap(&arr[i++], &arr[j--]);
+
         }
+
         quickSort(arr, left, j);
         quickSort(arr, i, right);
     }
