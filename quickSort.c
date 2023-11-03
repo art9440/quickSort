@@ -19,7 +19,7 @@ void quickSort(int* arr, int left, int right) //quick Sort of array
         while (i <= j)
         {
 
-            while (arr[i] < mid)
+            while (arr[i] < mid) //go
                 i++;
 
             while (arr[j] > mid)
