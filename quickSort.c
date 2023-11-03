@@ -2,6 +2,9 @@
 #include <malloc.h>
 
 
+#define START 0
+
+
 void swap(int *a, int *b){ //swaps two array elements
     int temp;
     temp = *a;
@@ -19,7 +22,7 @@ void quickSort(int* arr, int left, int right) //quick Sort of array
         while (i <= j)
         {
 
-            while (arr[i] < mid) //go
+            while (arr[i] < mid)
                 i++;
 
             while (arr[j] > mid)
@@ -39,15 +42,15 @@ void quickSort(int* arr, int left, int right) //quick Sort of array
 int main(){
     int N;
     scanf("%d", &N);
-    int left = 0, right = N - 1;
+    int left = START, right = N - 1;
     int *arr = (int*)malloc(N * sizeof(int));
 
-    for (int i = 0; i < N; i++)
+    for (int i = START; i < N; i++)
         scanf("%d", &arr[i]);
 
     quickSort(arr, left, right);
 
-    for(int i = 0; i < N; i++)
+    for(int i = START; i < N; i++)
         printf("%d ", arr[i]);
 
     free(arr);
